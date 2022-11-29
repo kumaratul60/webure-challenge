@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Banner from "./components/Banner";
+import Navbar from "./components/Navbar";
+import styled from "styled-components";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainWrapper className="App">
+      <Navbar />
+      <Banner />
+    </MainWrapper>
   );
 }
 
 export default App;
+
+const MainWrapper = styled.div`
+  position: absolute;
+  width: 1499px;
+  height: 990px;
+  background: #fef1e6;
+
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    height: 1990px;
+  }
+  @media screen and (max-width: 767px) {
+    height: 1990px;
+  }
+`;
